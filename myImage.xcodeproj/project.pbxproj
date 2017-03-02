@@ -14,7 +14,7 @@
 		05A4A9891E680E8600BF755C /* myImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9881E680E8600BF755C /* myImageTests.swift */; };
 		05A4A9941E680E8600BF755C /* myImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9931E680E8600BF755C /* myImageUITests.swift */; };
 		05A4A9A91E68140E00BF755C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9A81E68140E00BF755C /* LoginViewController.swift */; };
-		05A4A9AD1E68192C00BF755C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05A4A9AC1E68192C00BF755C /* GoogleService-Info.plist */; };
+		05A4A9AF1E6891DA00BF755C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05A4A9AE1E6891DA00BF755C /* GoogleService-Info.plist */; };
 		327C3350B893B3067BB6DC23 /* Pods_myImageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A08E7AE111F5F899ABA0B6D /* Pods_myImageTests.framework */; };
 		B62DB59E0A8C6A8C1F42ADD2 /* Pods_myImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFAC0C1AB263B8A53E7C1897 /* Pods_myImage.framework */; };
 		E435F13A0B6E81448D24EFC3 /* Pods_myImageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29DF72AD5EEC9B11B3E2019 /* Pods_myImageUITests.framework */; };
@@ -51,7 +51,7 @@
 		05A4A9931E680E8600BF755C /* myImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myImageUITests.swift; sourceTree = "<group>"; };
 		05A4A9951E680E8600BF755C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05A4A9A81E68140E00BF755C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		05A4A9AC1E68192C00BF755C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		05A4A9AE1E6891DA00BF755C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17C8D93C7DCD3C15D14C8D27 /* Pods-myImageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myImageUITests/Pods-myImageUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2369AD3B2EEEF904703873CB /* Pods-myImageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myImageUITests/Pods-myImageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		47B7B4CD724BCD7A067262AD /* Pods-myImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myImage/Pods-myImage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,8 +181,8 @@
 				05A4A9771E680E8600BF755C /* Main.storyboard */,
 				05A4A97A1E680E8600BF755C /* Assets.xcassets */,
 				05A4A97C1E680E8600BF755C /* LaunchScreen.storyboard */,
+				05A4A9AE1E6891DA00BF755C /* GoogleService-Info.plist */,
 				05A4A97F1E680E8600BF755C /* Info.plist */,
-				05A4A9AC1E68192C00BF755C /* GoogleService-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05A4A97E1E680E8600BF755C /* LaunchScreen.storyboard in Resources */,
-				05A4A9AD1E68192C00BF755C /* GoogleService-Info.plist in Resources */,
+				05A4A9AF1E6891DA00BF755C /* GoogleService-Info.plist in Resources */,
 				05A4A97B1E680E8600BF755C /* Assets.xcassets in Resources */,
 				05A4A9791E680E8600BF755C /* Main.storyboard in Resources */,
 			);
