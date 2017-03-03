@@ -9,7 +9,7 @@ target 'myImage' do
   pod 'Sugar'
   pod 'Cartography'
   pod 'ActiveLabel'
-  pod 'ChameleonFramework'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'KMPlaceholderTextView'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
@@ -18,6 +18,9 @@ target 'myImage' do
   pod 'FBSDKLoginKit'
   pod 'SVProgressHUD'
   pod 'FirebaseDatabase'
+  pod 'GoogleSignIn'
+  pod 'Fabric'
+  pod 'TwitterKit'
 
   target 'myImageTests' do
     inherit! :search_paths

@@ -9,24 +9,65 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
+import GoogleSignIn
+import Fabric
+import TwitterKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
-
+    let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        Fabric.with([Twitter.self])
+        
         FIRApp.configure()
+        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
         loadMainPages()
         return true
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let err = error{
+            print("Failed to log into Google", err)
+            return
+        }
+        
+        print("Successfulluy logged into Google", user)
+        
+        guard let idToken = user.authentication.idToken else { return }
+        guard let accessToken = user.authentication.accessToken  else { return }
+        let credentials = FIRGoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+
+        FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
+            if let err = error{
+                print("Failed to create a Firebase User in Google account: ", err)
+                return
+            }
+
+            guard let uidGID = user?.uid, let photoURLGID = user?.photoURL, let nameGID = user?.displayName else { return }
+            self.defaults.set(true, forKey: "isLoggedGID")
+            self.defaults.set(uidGID, forKey: "uidGID")
+            self.defaults.set("\(photoURLGID)", forKey: "photoURLGID")
+            self.defaults.set(nameGID, forKey: "nameGID")
+            print("Successfully logged into Firebase with Google", uidGID, photoURLGID, nameGID)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+            LoginViewController().dismiss(animated: true, completion: nil)
+        })
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
         let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+        GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
         
         return handled
     }

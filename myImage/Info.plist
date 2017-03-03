@@ -3,26 +3,25 @@
 <plist version="1.0">
 <dict>
     
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb266291440479988</string>
-            </array>
-        </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>266291440479988</string>
-    <key>FacebookDisplayName</key>
-    <string>myImage</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
+    <key>Fabric</key>
+    <dict>
+        <key>APIKey</key>
+        <string>e47e6525c2b1ba08dbd3631d67db1ddf0ab14fe0</string>
+        <key>Kits</key>
+        <array>
+            <dict>
+                <key>KitInfo</key>
+                <dict>
+                    <key>consumerKey</key>
+                    <string>Consumer Key</string>
+                    <key>consumerSecret</key>
+                    <string>Consumer Secret</string>
+                </dict>
+                <key>KitName</key>
+                <string>Twitter</string>
+            </dict>
+        </array>
+    </dict>
     
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
@@ -38,8 +37,36 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb266291440479988</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.592852590331-s5vakmj9f3tua99ok9f67ne9s378dd3l</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>266291440479988</string>
+	<key>FacebookDisplayName</key>
+	<string>myImage</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

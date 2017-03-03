@@ -15,6 +15,7 @@
 		05A4A9941E680E8600BF755C /* myImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9931E680E8600BF755C /* myImageUITests.swift */; };
 		05A4A9A91E68140E00BF755C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9A81E68140E00BF755C /* LoginViewController.swift */; };
 		05A4A9AF1E6891DA00BF755C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05A4A9AE1E6891DA00BF755C /* GoogleService-Info.plist */; };
+		05A4A9B21E68FDE400BF755C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9B11E68FDE400BF755C /* SignUpViewController.swift */; };
 		327C3350B893B3067BB6DC23 /* Pods_myImageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A08E7AE111F5F899ABA0B6D /* Pods_myImageTests.framework */; };
 		B62DB59E0A8C6A8C1F42ADD2 /* Pods_myImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFAC0C1AB263B8A53E7C1897 /* Pods_myImage.framework */; };
 		E435F13A0B6E81448D24EFC3 /* Pods_myImageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29DF72AD5EEC9B11B3E2019 /* Pods_myImageUITests.framework */; };
@@ -52,6 +53,7 @@
 		05A4A9951E680E8600BF755C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05A4A9A81E68140E00BF755C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		05A4A9AE1E6891DA00BF755C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		05A4A9B11E68FDE400BF755C /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		17C8D93C7DCD3C15D14C8D27 /* Pods-myImageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myImageUITests/Pods-myImageUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2369AD3B2EEEF904703873CB /* Pods-myImageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myImageUITests/Pods-myImageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		47B7B4CD724BCD7A067262AD /* Pods-myImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myImage/Pods-myImage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				05A4A9A81E68140E00BF755C /* LoginViewController.swift */,
+				05A4A9B11E68FDE400BF755C /* SignUpViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				05A4A96E1E680E8600BF755C /* Resources */,
 				7214280DD9C9EE30ACEE6229 /* [CP] Embed Pods Frameworks */,
 				A253E427C31FD498C370EA5C /* [CP] Copy Pods Resources */,
+				05A4A9B01E68AB8B00BF755C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -364,6 +368,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05A4A9B01E68AB8B00BF755C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" e47e6525c2b1ba08dbd3631d67db1ddf0ab14fe0 501f070125d9df76f8f2133526d45eca1292ccf54c9a6981cb2349487f95ec2d";
+		};
 		2E7A0758121524D163D04712 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -506,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A4A9B21E68FDE400BF755C /* SignUpViewController.swift in Sources */,
 				05A4A9A91E68140E00BF755C /* LoginViewController.swift in Sources */,
 				05A4A9741E680E8600BF755C /* AppDelegate.swift in Sources */,
 			);
