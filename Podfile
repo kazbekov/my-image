@@ -9,7 +9,7 @@ target 'myImage' do
   pod 'Sugar'
   pod 'Cartography'
   pod 'ActiveLabel'
-  pod 'ChameleonFramework'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'KMPlaceholderTextView'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
