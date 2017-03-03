@@ -17,6 +17,12 @@
 		05A4A9AF1E6891DA00BF755C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05A4A9AE1E6891DA00BF755C /* GoogleService-Info.plist */; };
 		05A4A9B21E68FDE400BF755C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9B11E68FDE400BF755C /* SignUpViewController.swift */; };
 		327C3350B893B3067BB6DC23 /* Pods_myImageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A08E7AE111F5F899ABA0B6D /* Pods_myImageTests.framework */; };
+		71425EAE1E68938800F2AAC8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EAD1E68938800F2AAC8 /* MainTabBarController.swift */; };
+		71425EB01E6893CB00F2AAC8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EAF1E6893CB00F2AAC8 /* ProfileViewController.swift */; };
+		71425EB21E6893D500F2AAC8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EB11E6893D500F2AAC8 /* HomeViewController.swift */; };
+		71425EB41E689A5500F2AAC8 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EB31E689A5500F2AAC8 /* Icon.swift */; };
+		71425EB61E68A91A00F2AAC8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EB51E68A91A00F2AAC8 /* SettingsTableViewController.swift */; };
+		71425EB81E68A9FF00F2AAC8 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EB71E68A9FF00F2AAC8 /* SettingsTableViewCell.swift */; };
 		B62DB59E0A8C6A8C1F42ADD2 /* Pods_myImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFAC0C1AB263B8A53E7C1897 /* Pods_myImage.framework */; };
 		E435F13A0B6E81448D24EFC3 /* Pods_myImageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29DF72AD5EEC9B11B3E2019 /* Pods_myImageUITests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +64,12 @@
 		2369AD3B2EEEF904703873CB /* Pods-myImageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myImageUITests/Pods-myImageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		47B7B4CD724BCD7A067262AD /* Pods-myImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myImage/Pods-myImage.debug.xcconfig"; sourceTree = "<group>"; };
 		5A08E7AE111F5F899ABA0B6D /* Pods_myImageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myImageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71425EAD1E68938800F2AAC8 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		71425EAF1E6893CB00F2AAC8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		71425EB11E6893D500F2AAC8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		71425EB31E689A5500F2AAC8 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		71425EB51E68A91A00F2AAC8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		71425EB71E68A9FF00F2AAC8 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		8FF96B9A66C4DAB5E0F59470 /* Pods-myImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-myImage/Pods-myImage.release.xcconfig"; sourceTree = "<group>"; };
 		E674B8BBEA5A42656856BF48 /* Pods-myImageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myImageTests/Pods-myImageTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDB282EB2B93A96C489B5997 /* Pods-myImageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myImageTests/Pods-myImageTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +162,7 @@
 		05A4A9A11E68126D00BF755C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				71425EB71E68A9FF00F2AAC8 /* SettingsTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -200,6 +213,7 @@
 		05A4A9A71E68136000BF755C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				71425EB31E689A5500F2AAC8 /* Icon.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -526,6 +540,9 @@
 				05A4A9B21E68FDE400BF755C /* SignUpViewController.swift in Sources */,
 				05A4A9A91E68140E00BF755C /* LoginViewController.swift in Sources */,
 				05A4A9741E680E8600BF755C /* AppDelegate.swift in Sources */,
+				71425EB01E6893CB00F2AAC8 /* ProfileViewController.swift in Sources */,
+				71425EAE1E68938800F2AAC8 /* MainTabBarController.swift in Sources */,
+				71425EB61E68A91A00F2AAC8 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
