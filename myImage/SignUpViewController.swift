@@ -59,6 +59,7 @@ class SignUpViewController: UIViewController {
             $0.layer.borderWidth = 1
             $0.layer.borderColor = HexColor("7C67E6")?.cgColor
             $0.layer.cornerRadius = 3
+            $0.addTarget(self, action: #selector(goFurther), for: .touchUpInside)
         }
     }()
     
@@ -132,6 +133,10 @@ class SignUpViewController: UIViewController {
         }
     }
     //MARK: -Actions
+    func goFurther() {
+        present(MainTabBarController(), animated:true, completion: nil)
+    }
+    
     func dismissView() {
         dismiss(animated: true, completion: nil)
     }

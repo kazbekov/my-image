@@ -7,22 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05A4A9741E680E8600BF755C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9731E680E8600BF755C /* AppDelegate.swift */; };
 		05A4A9791E680E8600BF755C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05A4A9771E680E8600BF755C /* Main.storyboard */; };
 		05A4A97B1E680E8600BF755C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05A4A97A1E680E8600BF755C /* Assets.xcassets */; };
 		05A4A97E1E680E8600BF755C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05A4A97C1E680E8600BF755C /* LaunchScreen.storyboard */; };
 		05A4A9891E680E8600BF755C /* myImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9881E680E8600BF755C /* myImageTests.swift */; };
 		05A4A9941E680E8600BF755C /* myImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9931E680E8600BF755C /* myImageUITests.swift */; };
-		05A4A9A91E68140E00BF755C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9A81E68140E00BF755C /* LoginViewController.swift */; };
 		05A4A9AF1E6891DA00BF755C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05A4A9AE1E6891DA00BF755C /* GoogleService-Info.plist */; };
-		05A4A9B21E68FDE400BF755C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9B11E68FDE400BF755C /* SignUpViewController.swift */; };
 		327C3350B893B3067BB6DC23 /* Pods_myImageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A08E7AE111F5F899ABA0B6D /* Pods_myImageTests.framework */; };
-		71425EAE1E68938800F2AAC8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EAD1E68938800F2AAC8 /* MainTabBarController.swift */; };
-		71425EB01E6893CB00F2AAC8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EAF1E6893CB00F2AAC8 /* ProfileViewController.swift */; };
-		71425EB21E6893D500F2AAC8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EB11E6893D500F2AAC8 /* HomeViewController.swift */; };
-		71425EB41E689A5500F2AAC8 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EB31E689A5500F2AAC8 /* Icon.swift */; };
-		71425EB61E68A91A00F2AAC8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EB51E68A91A00F2AAC8 /* SettingsTableViewController.swift */; };
-		71425EB81E68A9FF00F2AAC8 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EB71E68A9FF00F2AAC8 /* SettingsTableViewCell.swift */; };
+		714F48841E690E5D00D84A27 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F48761E690D7400D84A27 /* HomeViewController.swift */; };
+		714F48851E690E5D00D84A27 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F48771E690D7400D84A27 /* LoginViewController.swift */; };
+		714F48861E690E5D00D84A27 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F48781E690D7400D84A27 /* MainTabBarController.swift */; };
+		714F48871E690E5D00D84A27 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F48791E690D7400D84A27 /* ProfileViewController.swift */; };
+		714F48881E690E5D00D84A27 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F487A1E690D7400D84A27 /* SettingsTableViewController.swift */; };
+		714F48891E690E5D00D84A27 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F487B1E690D7400D84A27 /* SignUpViewController.swift */; };
+		714F488A1E690E5D00D84A27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F487C1E690D7400D84A27 /* ViewController.swift */; };
+		714F488B1E690E6500D84A27 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EB71E68A9FF00F2AAC8 /* SettingsTableViewCell.swift */; };
+		714F488C1E690E6500D84A27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9731E680E8600BF755C /* AppDelegate.swift */; };
+		714F488D1E690E6500D84A27 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71425EB31E689A5500F2AAC8 /* Icon.swift */; };
+		714F488E1E690E7500D84A27 /* GoogleService-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 05A4A9AE1E6891DA00BF755C /* GoogleService-Info.plist */; };
 		B62DB59E0A8C6A8C1F42ADD2 /* Pods_myImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFAC0C1AB263B8A53E7C1897 /* Pods_myImage.framework */; };
 		E435F13A0B6E81448D24EFC3 /* Pods_myImageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29DF72AD5EEC9B11B3E2019 /* Pods_myImageUITests.framework */; };
 /* End PBXBuildFile section */
@@ -57,19 +59,20 @@
 		05A4A98F1E680E8600BF755C /* myImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A4A9931E680E8600BF755C /* myImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myImageUITests.swift; sourceTree = "<group>"; };
 		05A4A9951E680E8600BF755C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05A4A9A81E68140E00BF755C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		05A4A9AE1E6891DA00BF755C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		05A4A9B11E68FDE400BF755C /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		17C8D93C7DCD3C15D14C8D27 /* Pods-myImageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myImageUITests/Pods-myImageUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2369AD3B2EEEF904703873CB /* Pods-myImageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myImageUITests/Pods-myImageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		47B7B4CD724BCD7A067262AD /* Pods-myImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myImage/Pods-myImage.debug.xcconfig"; sourceTree = "<group>"; };
 		5A08E7AE111F5F899ABA0B6D /* Pods_myImageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myImageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		71425EAD1E68938800F2AAC8 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		71425EAF1E6893CB00F2AAC8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		71425EB11E6893D500F2AAC8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		71425EB31E689A5500F2AAC8 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
-		71425EB51E68A91A00F2AAC8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		71425EB71E68A9FF00F2AAC8 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		714F48761E690D7400D84A27 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		714F48771E690D7400D84A27 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		714F48781E690D7400D84A27 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		714F48791E690D7400D84A27 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		714F487A1E690D7400D84A27 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		714F487B1E690D7400D84A27 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		714F487C1E690D7400D84A27 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8FF96B9A66C4DAB5E0F59470 /* Pods-myImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-myImage/Pods-myImage.release.xcconfig"; sourceTree = "<group>"; };
 		E674B8BBEA5A42656856BF48 /* Pods-myImageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myImageTests/Pods-myImageTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDB282EB2B93A96C489B5997 /* Pods-myImageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myImageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myImageTests/Pods-myImageTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,8 +180,13 @@
 		05A4A9A31E68133C00BF755C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				05A4A9A81E68140E00BF755C /* LoginViewController.swift */,
-				05A4A9B11E68FDE400BF755C /* SignUpViewController.swift */,
+				714F48761E690D7400D84A27 /* HomeViewController.swift */,
+				714F48771E690D7400D84A27 /* LoginViewController.swift */,
+				714F48781E690D7400D84A27 /* MainTabBarController.swift */,
+				714F48791E690D7400D84A27 /* ProfileViewController.swift */,
+				714F487A1E690D7400D84A27 /* SettingsTableViewController.swift */,
+				714F487B1E690D7400D84A27 /* SignUpViewController.swift */,
+				714F487C1E690D7400D84A27 /* ViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -537,12 +545,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05A4A9B21E68FDE400BF755C /* SignUpViewController.swift in Sources */,
-				05A4A9A91E68140E00BF755C /* LoginViewController.swift in Sources */,
-				05A4A9741E680E8600BF755C /* AppDelegate.swift in Sources */,
-				71425EB01E6893CB00F2AAC8 /* ProfileViewController.swift in Sources */,
-				71425EAE1E68938800F2AAC8 /* MainTabBarController.swift in Sources */,
-				71425EB61E68A91A00F2AAC8 /* SettingsTableViewController.swift in Sources */,
+				714F488E1E690E7500D84A27 /* GoogleService-Info.plist in Sources */,
+				714F488B1E690E6500D84A27 /* SettingsTableViewCell.swift in Sources */,
+				714F488C1E690E6500D84A27 /* AppDelegate.swift in Sources */,
+				714F488D1E690E6500D84A27 /* Icon.swift in Sources */,
+				714F48841E690E5D00D84A27 /* HomeViewController.swift in Sources */,
+				714F48851E690E5D00D84A27 /* LoginViewController.swift in Sources */,
+				714F48861E690E5D00D84A27 /* MainTabBarController.swift in Sources */,
+				714F48871E690E5D00D84A27 /* ProfileViewController.swift in Sources */,
+				714F48881E690E5D00D84A27 /* SettingsTableViewController.swift in Sources */,
+				714F48891E690E5D00D84A27 /* SignUpViewController.swift in Sources */,
+				714F488A1E690E5D00D84A27 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
