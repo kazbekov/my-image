@@ -12,6 +12,11 @@ import FBSDKCoreKit
 import GoogleSignIn
 import Fabric
 import TwitterKit
+import SideMenuController
+import ChameleonFramework
+import SVProgressHUD
+import UserNotifications
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -20,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        IQKeyboardManager.sharedManager().enable = true
         
         Fabric.with([Twitter.self])
         
@@ -30,36 +37,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
+        setUpSideMenu()
         loadMainPages()
+        
+        UISearchBar.appearance().barTintColor = HexColor("DA3C65")
+        UISearchBar.appearance().tintColor = UIColor.white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = HexColor("DA3C65")
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, error) in
+            if !accepted {
+                print("Notification access denied.")
+            }
+        }
+        
         return true
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let err = error{
-            print("Failed to log into Google", err)
+        SVProgressHUD.show()
+        if let err = error?.localizedDescription{
+            SVProgressHUD.showSuccess(withStatus: "\(err)")
+            SVProgressHUD.dismiss(withDelay: 1.5)
             return
         }
-        
-        print("Successfulluy logged into Google", user)
-        
         guard let idToken = user.authentication.idToken else { return }
         guard let accessToken = user.authentication.accessToken  else { return }
         let credentials = FIRGoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
-
         FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
-            if let err = error{
-                print("Failed to create a Firebase User in Google account: ", err)
+            if let err = error?.localizedDescription{
+                SVProgressHUD.showSuccess(withStatus: "\(err)")
+                SVProgressHUD.dismiss(withDelay: 1.5)
                 return
+            } else {
+                guard let uidGID = user?.uid, let photoURLGID = user?.photoURL, let nameGID = user?.displayName, let emailGID = user?.email else { return }
+                self.defaults.set(true, forKey: "isLoggedGID")
+                self.defaults.set(uidGID, forKey: "uidGID")
+                self.defaults.set("\(photoURLGID)", forKey: "photoURLGID")
+                self.defaults.set(nameGID, forKey: "nameGID")
+                self.defaults.set(emailGID, forKey: "emailGID")
+                SVProgressHUD.showSuccess(withStatus: "Вы успешно \nавторизованы")
+                SVProgressHUD.dismiss()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "dismiss"), object: nil)
             }
-
-            guard let uidGID = user?.uid, let photoURLGID = user?.photoURL, let nameGID = user?.displayName else { return }
-            self.defaults.set(true, forKey: "isLoggedGID")
-            self.defaults.set(uidGID, forKey: "uidGID")
-            self.defaults.set("\(photoURLGID)", forKey: "photoURLGID")
-            self.defaults.set(nameGID, forKey: "nameGID")
-            print("Successfully logged into Firebase with Google", uidGID, photoURLGID, nameGID)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
-            LoginViewController().dismiss(animated: true, completion: nil)
         })
     }
     
@@ -100,8 +120,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 extension AppDelegate{
     func loadMainPages() {
         if window == nil { window = UIWindow(frame: UIScreen.main.bounds) }
-        self.window?.rootViewController = LoginViewController()
+//        self.window?.rootViewController = LoginViewController()
+        let sideMenuViewController = SideMenuController()
+        setUpViews(sideMenuViewController)
+        self.window?.rootViewController = sideMenuViewController
         self.window?.makeKeyAndVisible()
     }
+    
+    func setUpSideMenu() {
+        SideMenuController.preferences.drawing.menuButtonImage = #imageLiteral(resourceName: "menu-icon")
+        SideMenuController.preferences.drawing.sidePanelPosition = .underCenterPanelLeft
+        SideMenuController.preferences.drawing.sidePanelWidth = 280
+        SideMenuController.preferences.drawing.centerPanelShadow = true
+        SideMenuController.preferences.animating.transitionAnimator = FadeAnimator.self
+        SideMenuController.preferences.animating.statusBarBehaviour = .horizontalPan
+    }
+    
+    func setUpViews(_ vc: SideMenuController?) {
+        let sideController = SideMenuTableViewController()
+        let centerController = UINavigationController(rootViewController: HomeViewController())
+        centerController.addSideMenuButton()
+        vc?.embed(sideViewController: sideController)
+        vc?.embed(centerViewController: centerController)
+    }
+
 }
 

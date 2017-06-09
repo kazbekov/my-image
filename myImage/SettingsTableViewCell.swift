@@ -10,7 +10,7 @@ import UIKit
 import Cartography
 
 class SettingsTableViewCell: UITableViewCell {
-    lazy var ordererNameLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "test"
         label.textColor = .black
@@ -18,9 +18,14 @@ class SettingsTableViewCell: UITableViewCell {
         return label
     }()
     
+    lazy var iconImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
+    }
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        [ordererNameLabel].forEach {
+        [titleLabel, iconImageView].forEach {
             contentView.addSubview($0)
         }
         setUpConstraints()
@@ -31,8 +36,19 @@ class SettingsTableViewCell: UITableViewCell {
     }
     
     func setUpConstraints() {
-        constrain(ordererNameLabel, contentView){ordererNameLabel, contentView in
-            ordererNameLabel.center == contentView.center
+        constrain(titleLabel, contentView, iconImageView){titleLabel, contentView, iconImageView in
+            titleLabel.centerY == contentView.centerY
+            titleLabel.leading == iconImageView.trailing + 15
+            iconImageView.leading == contentView.leading + 20
+            iconImageView.centerY == contentView.centerY
         }
     }
 }
+
+extension SettingsTableViewCell {
+    func setUpCellWithProperties(title: String, icon: UIImage) {
+        titleLabel.text = title
+        iconImageView.image = icon
+    }
+}
+

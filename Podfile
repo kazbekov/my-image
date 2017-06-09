@@ -21,7 +21,13 @@ target 'myImage' do
   pod 'GoogleSignIn'
   pod 'Fabric'
   pod 'TwitterKit'
-
+  pod 'SideMenuController'
+  pod 'CNPPopupController'
+  pod 'TTGEmojiRate'
+  pod 'SVProgressHUD'
+  pod 'Kingfisher', '~> 3.0'
+  pod 'IQKeyboardManagerSwift'
+  
   target 'myImageTests' do
     inherit! :search_paths
     # Pods for testing

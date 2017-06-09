@@ -2,27 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    
-    <key>Fabric</key>
-    <dict>
-        <key>APIKey</key>
-        <string>e47e6525c2b1ba08dbd3631d67db1ddf0ab14fe0</string>
-        <key>Kits</key>
-        <array>
-            <dict>
-                <key>KitInfo</key>
-                <dict>
-                    <key>consumerKey</key>
-                    <string>Consumer Key</string>
-                    <key>consumerSecret</key>
-                    <string>Consumer Secret</string>
-                </dict>
-                <key>KitName</key>
-                <string>Twitter</string>
-            </dict>
-        </array>
-    </dict>
-    
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>e47e6525c2b1ba08dbd3631d67db1ddf0ab14fe0</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>Consumer Key</string>
+					<key>consumerSecret</key>
+					<string>Consumer Secret</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+			</dict>
+		</array>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -94,5 +97,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Will you allow this app to always know your location?</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Do you allow this app to know your current location?</string>
 </dict>
 </plist>

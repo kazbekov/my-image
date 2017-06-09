@@ -49,19 +49,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         }
     }()
     
-    private lazy var vkButton: UIButton = {
-        return UIButton().then {
-            $0.sizeToFit()
-            $0.layer.cornerRadius = 3
-            $0.backgroundColor = HexColor("5276A3")
-            $0.setTitleColor(.gray, for: .highlighted)
-            $0.setTitle("  Войти через Вконтакте", for: .normal)
-            $0.setImage(#imageLiteral(resourceName: "vk-icon"), for: .normal)
-            $0.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
-//            $0.addTarget(self, action: #selector(logOutFunc), for: .touchUpInside)
-        }
-    }()
-    
     private lazy var appIconImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.image = #imageLiteral(resourceName: "Icon-Input")
@@ -88,6 +75,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         super.viewDidLoad()
         setUpViews()
         setUpConstraints()
+        NotificationCenter.default.addObserver(self, selector: #selector(dismissView), name: NSNotification.Name(rawValue: "dismiss"), object: nil)
     }
     
     //MARK: - Setups
@@ -100,7 +88,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
-        [facebookButton, googleButton, vkButton, appIconImageView, submitButton].forEach {
+        [facebookButton, googleButton, appIconImageView, submitButton].forEach {
             view.addSubview($0)
         }
         
@@ -109,28 +97,25 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     func setUpConstraints() {
         
         constrain(appIconImageView, view){image, view in
-            image.top == view.top + 130
+            image.top == view.top + 145
             image.centerX == view.centerX
             image.width == view.width - 60
             image.height == 100
         }
         
-        constrain(facebookButton, googleButton, vkButton, submitButton, view) { facebook, google, vk, submit, view in
+        constrain(facebookButton, googleButton, submitButton, view) { facebook, google, submit, view in
             facebook.width == view.width * 0.7
             google.width == facebook.width
-            vk.width == google.width
             
             facebook.height == 40
             google.height == facebook.height
-            vk.height == google.height
             
-            vk.bottom == submit.top
+            google.bottom == submit.top
             
             facebook.centerX == view.centerX
             google.centerX == view.centerX
-            vk.centerX == view.centerX
             
-            distribute(by: 10, vertically: facebook, google, vk)
+            distribute(by: 10, vertically: facebook, google)
             
         }
         
@@ -167,15 +152,18 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
     func handleCustomGoogleSignIn(){
         SVProgressHUD.show()
         GIDSignIn.sharedInstance().signIn()
+        SVProgressHUD.dismiss(withDelay: 1.5)
     }
     
+    //facebook
     func handleCustomFBLogin() {
-        SVProgressHUD.show()
         FBSDKLoginManager().logIn(withReadPermissions: ["public_profile", "email", "user_friends"], from: self)
-        { (result, err) in
-            if err != nil{
-                SVProgressHUD.dismiss()
-                print("cannot", err ?? "")
+        { (result, error) in
+            if error != nil{
+                guard let err = error?.localizedDescription else {return}
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+                SVProgressHUD.showSuccess(withStatus: "\(err)")
+                self.dismissView()
                 return
             }
             self.showEmailAddress()
@@ -183,15 +171,9 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("Did log out of Facebook")
     }
     
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        if error != nil{
-            print(error)
-            return
-        }
-        showEmailAddress()
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!){
     }
     
     func showEmailAddress() {
@@ -201,29 +183,35 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
         FIRAuth.auth()?.signIn(with: credentials, completion: {
             (user, error) in
             if error != nil{
-                print("Sth went wrong with our FB user: ", error ?? "")
+                guard let err = error?.localizedDescription else {return}
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+                SVProgressHUD.showSuccess(withStatus: "\(err)")
+                self.dismissView()
                 return
+            } else{
+                self.defaults.set(true, forKey: "isLoggedFB")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+                SVProgressHUD.showSuccess(withStatus: "Вы успешно \nавторизованы")
+                self.dismissView()
             }
-            self.defaults.set(true, forKey: "isLogged")
-            print("Successfully logged in with our user: ", user ?? "")
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
-            SVProgressHUD.showSuccess(withStatus: "Вы успешно \nавторизованы")
-            SVProgressHUD.dismiss()
-            self.dismiss(animated: true, completion: nil)
             
         })
         
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fileds": "id, name, first_name, last_name, picture.type(large), email"]).start {
-            (connection, result, err) in
+            (connection, result, error) in
             
-            if err != nil{
-                print("Failed to start graph request", err ?? "")
+            if error != nil{
+                guard let err = error?.localizedDescription else {return}
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+                SVProgressHUD.showSuccess(withStatus: "\(err)")
+                SVProgressHUD.dismiss(withDelay: 2.0)
                 return
+            } else {
+                self.dict = result as! NSDictionary
+                self.defaults.set(self.dict.object(forKey: "name"), forKey: "name")
+                self.defaults.set(self.dict.object(forKey: "id"), forKey: "id")
+                self.defaults.set(self.dict.object(forKey: "email"), forKey: "email")
             }
-            
-            self.dict = result as! NSDictionary
-            self.defaults.set(self.dict.object(forKey: "name"), forKey: "name")
-            self.defaults.set(self.dict.object(forKey: "id"), forKey: "id")
         }
     }
 }
